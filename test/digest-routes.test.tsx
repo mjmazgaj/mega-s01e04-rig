@@ -6,7 +6,7 @@ import { createApp } from '../src/app.js';
 import type { Night } from '../src/digest/types.js';
 
 const line = (at: string, job: string, status: string, owner?: string, error?: string) =>
-  JSON.stringify({ at, job, status, ...(owner ? { owner } : {}), ...(error ? { error } : {}) });
+  JSON.stringify({ at, job, status, owner: owner ?? null, ...(error ? { error } : {}) });
 
 // Written out of job order on purpose: rows must come back sorted by job.
 const DATA = [
